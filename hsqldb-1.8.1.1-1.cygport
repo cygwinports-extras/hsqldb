@@ -1,0 +1,13 @@
+JAVA_CLASSPATH="junit.jar:servlet-api.jar"
+inherit ant
+
+
+HOMEPAGE="http://hsqldb.org/"
+SRC_URI="mirror://sourceforge/hsqldb/${PN}_${PV//./_}.zip"
+SRC_DIR=${PN}
+
+DISTCLEANFILES="lib/*.jar"
+
+ANT_BUILD_XML="build/build.xml"
+ANT_BUILD_TARGETS="jar jarclient jarmain jarmin jarsqltool jarutil" # javadocdev"
+ANT_INSTALL_JARS="lib/*.jar"

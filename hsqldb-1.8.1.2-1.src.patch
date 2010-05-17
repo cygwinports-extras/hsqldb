@@ -1,0 +1,11 @@
+--- origsrc/hsqldb/bin/hsqldb	2009-02-16 18:29:55.000000000 -0600
++++ src/hsqldb/bin/hsqldb	2010-05-10 01:32:55.970988900 -0500
+@@ -138,7 +138,7 @@ case "`uname`" in
+         LOGFILE=/var/log/hsqldb.log
+         PIDFILE=/var/run/hsqldb.pid
+     ;;
+-    Linux)
++    Linux|CYGWIN*)
+         LOGFILE=/var/log/hsqldb.log
+         PIDFILE=/var/run/hsqldb.pid
+     ;;

@@ -7,7 +7,14 @@ SRC_URI="mirror://sourceforge/hsqldb/${PN}_${PV//./_}.zip"
 SRC_DIR=${PN}
 
 DISTCLEANFILES="lib/*.jar"
+DIFF_EXCLUDES="doc"
 
 ANT_BUILD_XML="build/build.xml"
-ANT_BUILD_TARGETS="jar jarclient jarmain jarmin jarsqltool jarutil" # javadocdev"
-ANT_INSTALL_JARS="lib/*.jar"
+ANT_BUILD_TARGETS="jar jarclient jarmain jarmin jarsqltool jarutil javadocdev"
+
+src_install() {
+	cd ${B}
+	dojar lib/*.jar
+	dojavadoc doc/src
+	dobin bin/hsqldb
+}
